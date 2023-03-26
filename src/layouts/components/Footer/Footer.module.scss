@@ -1,0 +1,9 @@
+@use '../../../scss/' as *;
+.wrapper {
+    @include flex(center, center);
+    width: 100%;
+
+    .inner {
+        width: $default-layout-width;
+    }
+}

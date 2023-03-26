@@ -1,0 +1,13 @@
+@use '../../../scss/' as *;
+
+.wrapper {
+    width: 100%;
+    height: $header-height;
+    background-color: $white;
+    @include flex(center, center);
+}
+
+.inner {
+    height: 100%;
+    width: $default-layout-width;
+}
