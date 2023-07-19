@@ -1,9 +1,46 @@
 @use '../../../scss/' as *;
 .wrapper {
-    @include flex(center, center);
+    position: relative;
+    padding: 11rem 3.2rem;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
 
     .inner {
-        width: $default-layout-width;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        .content {
+            width: 100%;
+
+            .logo {
+                @include flex(center, center);
+                margin-bottom: 4.8rem;
+            }
+            .logo svg {
+                color: $primary-color;
+                fill: currentColor;
+                width: 240px;
+                height: 100%;
+                padding: 0 10px;
+            }
+
+            .content-menu_list {
+                width: 100%;
+                @include flex(center, center);
+                .content-menu_item {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 2.4rem;
+                    margin: 0 4rem;
+                    & > * ~ * {
+                        margin-top: 1.6rem;
+                    }
+                }
+            }
+        }
     }
 }

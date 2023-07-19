@@ -1,17 +1,35 @@
+import { useEffect, useRef } from 'react';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import { Link, useNavigate } from 'react-router-dom';
 import NavbarItem from './components/NavbarItem/NavbarItem';
 import config from './../../../config/config';
 import { Button } from 'react-bootstrap';
-import { RiHomeHeartLine } from 'react-icons/ri';
-import images from '../../../assets/images/images';
+// import { RiHomeHeartLine } from 'react-icons/ri';
+// import images from '../../../assets/images/images';
 
 const cx = classNames.bind(styles);
 function Header() {
     const navigate = useNavigate();
+    const headerRef = useRef(null);
+    useEffect(() => {
+        const shrinkHeader = () => {
+            if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
+                headerRef.current.style.backgroundColor = '#0f0f0f';
+            } else {
+                headerRef.current.style.backgroundColor = 'transparent';
+            }
+        };
+        window.addEventListener('scroll', shrinkHeader);
+
+        return () => {
+            window.removeEventListener('scroll', shrinkHeader);
+        };
+    }, []);
+
+    // const navigate = useNavigate();
     return (
-        <header className={cx('wrapper', 'container-fluid')}>
+        <header ref={headerRef} className={cx('wrapper', 'container-fluid')}>
             <div className={cx('inner')}>
                 <Link to="/" className={cx('logo')}>
                     <span>
@@ -31,15 +49,15 @@ function Header() {
                 </Link>
                 <div className={cx('navbar')}>
                     <NavbarItem link={config.routes.home} title="Home" />
-                    <NavbarItem link={config.routes.movie} title="Movies" />
-                    <NavbarItem link={config.routes.tv} title="TV Series" />
+                    <NavbarItem link={'/movie'} title="Movies" />
+                    <NavbarItem link={'/tv'} title="TV Series" />
                 </div>
 
                 <div className={cx('user_NoSignIn')}>
-                    <Button variant="outline-danger" className={cx('signIn')}>
+                    <Button variant="outline-danger" className={cx('signIn')} onClick={() => navigate('/login')}>
                         Sign In
                     </Button>
-                    <Button variant="danger" className={cx('signUp')}>
+                    <Button variant="danger" className={cx('signUp')} onClick={() => navigate('/login')}>
                         Sign Up
                     </Button>
                 </div>

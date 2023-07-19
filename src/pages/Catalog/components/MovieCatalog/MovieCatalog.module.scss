@@ -1,0 +1,46 @@
+@use '../../../../scss/' as *;
+
+.grid-item {
+    padding: 6rem 1rem;
+}
+.wrapper {
+    max-width: 500px;
+    // position: relative;
+    // // width: 100%;
+    display: flex;
+    input {
+        width: 100%;
+    }
+
+    .input-search {
+        border: 0;
+        background-color: $black;
+        padding: 0.8rem 3.2rem;
+        font-size: 1.6rem;
+        border-radius: 30px;
+        color: $text-color;
+        font-family: $font-family-ProximaNova;
+    }
+
+    .btn {
+        background-color: $primary-color;
+        font-size: 1.4rem;
+        color: $text-color;
+        padding: 0 30px;
+        border-radius: 20px;
+        margin-left: 20px;
+        text-transform: capitalize;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5rem;
+}
+
+.movie-not_found {
+    font-size: 2rem;
+    @include flex(center, center);
+    margin: 25vh 0;
+}

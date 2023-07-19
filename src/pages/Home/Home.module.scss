@@ -1,0 +1,26 @@
+@use './../../scss/' as *;
+.wrapper {
+    margin-bottom: 4.8rem;
+
+    .inner {
+        margin-bottom: 3.2rem;
+
+        h2 {
+            font-size: 3.2rem;
+            font-weight: 600;
+        }
+
+        .btn {
+            background-color: transparent;
+            border-radius: 30px;
+            padding: 4px 26px;
+            font-size: 1.6rem;
+            border-color: $white;
+            font-weight: 600;
+            &:hover {
+                color: $primary-color;
+                background-color: $white;
+            }
+        }
+    }
+}

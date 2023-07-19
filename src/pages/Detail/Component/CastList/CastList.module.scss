@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    margin-top: 2rem;
+
+    .item {
+        padding-right: 20px;
+        .item-img {
+            padding-top: 160px;
+            width: 110px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-name {
+            display: block;
+            font-size: 1.4rem;
+            align-items: center;
+            text-align: center;
+        }
+    }
+}

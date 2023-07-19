@@ -80,3 +80,11 @@ iframe {
     src: url('/assets/fonts/sofiapro-semibold.otf');
     font-weight: 600;
 }
+
+.section {
+    padding: 0 5rem;
+}
+
+.section__header {
+    @include flex(center, space-between);
+}
